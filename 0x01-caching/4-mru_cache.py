@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Task 4 - Mosty Recently Used Cache
 """
