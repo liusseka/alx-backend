@@ -10,12 +10,16 @@ class BasicCache(BaseCaching):
     This caching system has no limits and allows you
     to add items to the cache.
     """
+    def __init__(self):
+        BaseCaching.__init__(self)
+
     def put(self, key, item):
         if key is None or item is None:
-            return
-        self.cache_data[key] = item
+            pass
+        else:
+            self.cache_data[key] = item
 
     def get(self, key):
-        if key is None:
-            return None
-        return self.cache_data.get(key, None)
+        if key is not None and key in self.cache_data.keys():
+            return self.cache_data[key]
+        return None
